@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Curcilar web";
+  src: url("/fonts/circularweb-book.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "general";
+  src: url("/fonts/general.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "robert";
+  src: url("/fonts/robert-medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "robert-regular";
+  src: url("/fonts/robert-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "zentry";
+  src: url("/fonts/zentry.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme {
+  /* Fonts */
+  --font-zentry: "Zentry", sans-serif;
+  --font-general: "general", sans-serif;
+  --font-curcularWeb: "Curcilar web", sans-serif;
+  --font-robertMedium: "robert-medium", sans-serif;
+  --font-robertRegular: "robert-regular", sans-serif;
+
+  /* Blue color */
+  --color-blue-50: #dfdff0;
+  --color-blue-75: #dfdff2;
+  --color-blue-100: #f0f2fa;
+  --color-blue-200: #010101;
+  --color-blue-300: #4fb7dd;
+
+  /* Violet color */
+  --color-violet-300: #572400;
+
+  /* Yellow color */
+  --color-yellow-100: #8e983f;
+  --color-yellow-300: #edff66;
+}
+
+body {
+  font-family: "General Sans", sans-serif;
+  width: 100dvw;
+  background-color: #dfdff0;
+  overflow-x: hidden;
+}
+/* 
+.font-curcular-web {
+  font-family: "Curcilar web";
+}
+.font-general {
+  font-family: "general";
+}
+.font-robert-medium {
+  font-family: "robert-medium";
+}
+.font-robert-regular {
+  font-family: "robert-regular";
+}
+.font-zentry {
+  font-family: "zentry";
+} */
