@@ -1,9 +1,9 @@
+import Hero from "./components/Hero";
+
 function App() {
   return (
-    <main>
-      <h2 className="text-4xl font-bold  text-violet-300">
-        Welcome to Awwards
-      </h2>
+    <main className="relative min-h-screen w-screen object-center">
+      <Hero />
     </main>
   );
 }
