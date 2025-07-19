@@ -1,6 +1,8 @@
 import { useRef, useState } from "react";
 import Button from "./Button";
 import { TiLocationArrow } from "react-icons/ti";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 function Hero() {
   const [currentIndex, setCurrentIndex] = useState(1);
@@ -23,6 +25,36 @@ function Hero() {
     setCurrentIndex(upcomingVideoIndex);
     const videoFrame = document.getElementById("video-frame");
   };
+
+  useGSAP(
+    () => {
+      if (hasClicked) {
+        gsap.set("#next-video", { visibility: "visible" });
+
+        gsap.to("#next-video", {
+          transformOrigin: "center center",
+          scale: 1,
+          width: "100%",
+          height: "100%",
+          duration: 1,
+          ease: "power1.inOut",
+          onStart: () => nextVideoRef.current.play(),
+        });
+
+        gsap.from("#current-video", {
+          transformOrigin: "center center",
+          scale: 0,
+          width: "100%",
+          height: "100%",
+          duration: 0.5,
+          ease: "power1.inOut",
+          onStart: () => nextVideoRef.current.play(),
+        });
+      }
+    },
+    [currentIndex],
+    true
+  );
 
   const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
   return (
@@ -92,6 +124,9 @@ function Hero() {
           </div>
         </div>
       </div>
+      <h1 className="special-font hero-heading font-zentry absolute bottom-5 right-5 text-black">
+        G<b>A</b>MING
+      </h1>
     </div>
   );
 }
