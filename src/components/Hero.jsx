@@ -30,7 +30,6 @@ function Hero() {
     () => {
       if (hasClicked) {
         gsap.set("#next-video", { visibility: "visible" });
-
         gsap.to("#next-video", {
           transformOrigin: "center center",
           scale: 1,
@@ -40,21 +39,21 @@ function Hero() {
           ease: "power1.inOut",
           onStart: () => nextVideoRef.current.play(),
         });
-
         gsap.from("#current-video", {
           transformOrigin: "center center",
           scale: 0,
-          width: "100%",
-          height: "100%",
-          duration: 0.5,
+          duration: 1.5,
           ease: "power1.inOut",
-          onStart: () => nextVideoRef.current.play(),
         });
       }
     },
-    [currentIndex],
-    true
+    {
+      dependencies: [currentIndex],
+      revertOnUpdate: true,
+    }
   );
+
+  useGSAP(() => {}, { dependencies: [] });
 
   const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
   return (
