@@ -46,7 +46,7 @@ function Hero() {
           height: "100%",
           duration: 1,
           ease: "power1.inOut",
-          onStart: () => nextVdRef.current.play(),
+          onStart: () => nextVideoRef.current.play(),
         });
         gsap.from("#current-video", {
           transformOrigin: "center center",
@@ -64,8 +64,8 @@ function Hero() {
 
   useGSAP(() => {
     gsap.set("#video-frame", {
-      clipPath: "polygon(14% 0%, 72% 0%, 90% 90%, 0% 100%)",
-      borderRadius: "0 0 40% 10%",
+      clipPath: "polygon(14% 0, 72% 0, 88% 90%, 0 95%)",
+      borderRadius: "0% 0% 40% 10%",
     });
 
     gsap.from("#video-frame", {
