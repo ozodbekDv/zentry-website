@@ -1,8 +1,8 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import AnimatedText from "./AnimatedText";
+
+import AnimatedTitle from "./AnimatedTitle";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,7 +31,12 @@ function About() {
           Welcome to Zentry
         </h2>
 
-        <AnimatedText />
+        <AnimatedTitle
+          title={
+            "Disc<b>o</b>ver the world's <br /> l<b>a</b>rgest shared adventure"
+          }
+          containerClass="mt-5 text-black text-center"
+        />
 
         <div className="about-subtext">
           <p>The Game of Games begins-your life, now an epic MMORPG</p>
