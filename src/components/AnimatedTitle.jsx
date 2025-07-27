@@ -1,5 +1,8 @@
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function AnimatedTitle({ title, containerClass }) {
   const containerRef = useRef(null);
@@ -8,24 +11,30 @@ function AnimatedTitle({ title, containerClass }) {
     const ctx = gsap.context(() => {
       const titleAnimation = gsap.timeline({
         scrollTrigger: {
-          trigger: containerRef,
+          trigger: containerRef.current,
           start: "100 bottom",
           end: "center bottom",
           toggleActions: "play none none reverse",
         },
       });
 
-      titleAnimation.to(".animated-word", {
-        opacity: 1,
-        transform: "translate3d(0,0,0) rotateY(0deg) rotateX(0deg)",
-        ease: "power2.inOut",
-        stagger: 0.02,
-      });
+      titleAnimation.to(
+        ".animated-word",
+        {
+          opacity: 1,
+          transform: "translate3d(0,0,0) rotateY(0deg) rotateX(0deg)",
+          ease: "power2.inOut",
+          stagger: 0.02,
+        },
+        0
+      );
     }, containerRef);
+
+    return () => ctx.revert();
   }, []);
 
   return (
-    <div className={`animated-title ${containerClass}`}>
+    <div ref={containerRef} className={`animated-title ${containerClass}`}>
       {title.split("<br />").map((line, index) => (
         <div
           key={index}
