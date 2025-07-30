@@ -10,6 +10,7 @@ function Button({ title, id, containerClass, leftIcon, rightIcon }) {
       <span className="overflow-hidden inline-flex relative font-general text-xs uppercase">
         <div>{title}</div>
       </span>
+      {rightIcon}
     </button>
   );
 }

@@ -45,7 +45,7 @@ function About() {
           <div className="mask-clip-path about-image">
             <img
               src="img/about.webp"
-              className="absolute left-0 top-0 size-full object-cover"
+              className="absolute left-0 top-0 size-full object-cover border-2 rounded-[30px]"
               alt=""
             />
           </div>
