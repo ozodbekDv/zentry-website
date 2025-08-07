@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function AnimatedTitle({ title, containerClass }) {
+function AnimatedTitle({ title, containerClass, sectionId }) {
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -34,7 +34,11 @@ function AnimatedTitle({ title, containerClass }) {
   }, []);
 
   return (
-    <div ref={containerRef} className={`animated-title ${containerClass}`}>
+    <div
+      id={sectionId}
+      ref={containerRef}
+      className={`animated-title ${containerClass}`}
+    >
       {title.split("<br />").map((line, index) => (
         <div
           key={index}
