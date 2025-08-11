@@ -32,6 +32,14 @@ function Contact() {
             src="../img/swordman.webp"
           />
         </div>
+
+        <div className="flex flex-col items-center text-center">
+          <p className="font-general text-[10px] uppercase">join zentry</p>
+          <p className="special-font mt-10 w-full font-zentry text-5xl leading-[0.9] md:text-[6rem]">
+            Let's b<b>u</b>ild the <br /> new era of <br /> g<b>a</b>ming t
+            <b>o</b>gether
+          </p>
+        </div>
       </div>
     </div>
   );
